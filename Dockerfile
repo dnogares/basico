@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Instalamos las dependencias de producción y el servidor estático
-RUN npm install && npm install -g serve
+RUN npm install --legacy-peer-deps && npm install -g serve
 
 # Copiamos el resto del código fuente
 COPY . .
@@ -22,4 +22,5 @@ EXPOSE 3000
 # Ejecutamos 'serve'. 
 # El flag -s permite que las rutas de React funcionen correctamente (Single Page App)
 # El flag -l 3000 indica el puerto
+
 CMD ["serve", "-s", "dist", "-l", "3000"]
