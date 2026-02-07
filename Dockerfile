@@ -23,4 +23,5 @@ EXPOSE 3000
 # El flag -s permite que las rutas de React funcionen correctamente (Single Page App)
 # El flag -l 3000 indica el puerto
 
-CMD ["serve", "-s", "dist", "-l", "3000"]
+CMD ["serve", "-s", "dist", "-l", "3000", "-a", "0.0.0.0"]
+
